@@ -1,42 +1,52 @@
 <!DOCTYPE html>
 <html lang=en>
+
 <head>
 <meta charset=utf-8>
 <title>Deca products</title>
 <link href=https://www.decathlon.ca/modules/decaaffiliation/views/css/decaaffiliation.css rel=stylesheet>
 </head>
+
 <body>
 <div id=app></div>
+
 <script>
   var deca_param = {
-     "sport": "équitation",
-     "natures": [
+    "sport": "équitation",
+    "natures": [
       "Casque",
       "Gilet sans manche",
       "Bottes d'équitation"
-     ],
-     "gender": "Homme",
-     "length": "",
-     }
- </script>
-    <script src="https://code.jquery.com/jquery-3.4.0.min.js">
-    </script>
-   <script src=https://www.decathlon.ca/modules/decaaffiliation/views/js/decaaffiliation.js>
-   </script>
-   <script type="text/javascript">
-    $( document ).ready(function() {
-      // grabs all elements on the page matching css selector '.item-card a'
-    // and overwrites the url of the button with a custom url
-    var routingUrl = 'hm.evyy.net/c/123866/226427/3909?u=';
-    $(document).on("click",'.item-card a', function (e) {
-      e.preventDefault()
-      var linkURL = $(this).attr('href');
-      var urlWithApi = routingUrl + linkURL;
-      console.log(urlWithApi);
-      // window.open(urlWithApi, "_self");
-      return false;
-    })
-  });
-   </script>
-  </body>
+    ],
+    "gender": "Homme",
+    "length": "",
+  }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.4.0.min.js">
+</script>
+
+<script src=https://www.decathlon.ca/modules/decaaffiliation/views/js/decaaffiliation.js>
+</script>
+
+<script type="text/javascript">
+// grabs all elements on the page matching css selector '.item-card a' and
+// overwrites the url of the elements with a custom url that gets called on click
+$( document ).ready(function() {
+  var routingUrl = 'https://hm.evyy.net/c/123866/226427/3909?u=';
+  $(document).on("click",'.item-card a', function (e) {
+    e.preventDefault();
+    var linkURL = $(this).attr('href');
+    var urlWithApi = routingUrl + linkURL;
+    window.open(urlWithApi, "_self");
+    return false;
+  })
+});
+</script>
+</body>
+
 </html>
+Collapse
+
+
+
