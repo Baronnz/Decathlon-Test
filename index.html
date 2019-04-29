@@ -37,7 +37,7 @@ $( document ).ready(function() {
   $(document).on("click",'.item-card a', function (e) {
     e.preventDefault();
     var linkURL = $(this).attr('href');
-    var urlWithApi = routingUrl + linkURL;
+    var urlWithApi = routingUrl + encodeURI(linkURL);
     window.open(urlWithApi, "_self");
     return false;
   })
